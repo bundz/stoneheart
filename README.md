@@ -21,4 +21,7 @@ npm start
 ```
 Enjoy!
 ```
+
+```
 Contributors: MurasUarth, nicolasdsa, Laelapz and bundz
+```
