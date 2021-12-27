@@ -7,3 +7,8 @@ To install run
 ```
 npm install
 ```
+
+## Running
+```
+npm start
+```
