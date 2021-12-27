@@ -1,6 +1,6 @@
 # Stoneheart
 
-A heartstone clone. With more features.
+A heartstone clone. With less features.
 
 ## Installing
 To install run
