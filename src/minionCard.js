@@ -18,14 +18,16 @@ class MinionCard extends Card {
       return this.race;
     }
     suffer(damage){
-
+      this.life -= damage;    
+      this.isDead();
     }
     hit(minion){
-
+      minion.suffer(this.attack);
+      this.life -= minion.attack;
     }
     isDead(){
-
-    }
+      return this.life < 0 ? true : false;
+    } 
 };
 
 module.exports = MinionCard;
