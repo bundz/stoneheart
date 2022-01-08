@@ -1,3 +1,4 @@
+const Battlefield = require('./battlefield');
 const Card = require('./card');
 
 class MinionCard extends Card {
@@ -6,6 +7,7 @@ class MinionCard extends Card {
       this.life = life;
       this.race = race;
     }
+
     getAttack(){
       return this.attack;
     }
@@ -17,14 +19,19 @@ class MinionCard extends Card {
     getRace(){
       return this.race;
     }
+
     suffer(damage){
       this.life -= damage;    
-      this.isDead();
+      if(this.isDead()){
+        Battlefield.removeCard(this.id);
+      }
     }
+
     hit(minion){
       minion.suffer(this.attack);
       this.life -= minion.attack;
     }
+    
     isDead(){
       return this.life < 0 ? true : false;
     } 
