@@ -3,23 +3,31 @@ class Match {
     this.player1 = player1;
     this.player2 = player2;
     let currentPlayer;
+    let state;
   }
-
+  
   drawFirstPlayer() {
-    if(Math.ceil(math.random() * 2) == 1) {
+    if(Math.ceil(Math.random() * 2) == 1) {
       this.currentPlayer = this.player1;
     } 
     this.currentPlayer = this.player2;
   }
   
-  start() {
-    this.drawFirstPlayer();
-    this.makePlayersShuffleDecks();
+  makePlayersShuffleDecks() {
+    this.player1.deck.shuffle();
+    this.player2.deck.shuffle();
   }
-  
+
   makePlayersDrawInitialCards() {
     this.player1.pop();
     this.player2.pop();
+  }
+
+  start() {
+    this.state = 'running';
+    this.drawFirstPlayer();
+    this.makePlayersShuffleDecks();
+    this.makePlayersDrawInitialCards();
   }
   
   getCurrentPlayer() {
@@ -29,12 +37,9 @@ class Match {
   nextTurn(){
     this.currentPlayer = this.currentPlayer.oponent;
   }
-  
-  makePlayersShuffleDecks() {
-    
-  }
 
   finish() {
+    this.state = 'finished';
   }
 };
 
