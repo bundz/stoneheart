@@ -1,5 +1,4 @@
-const Card = require('./src/card');
+const Match = require("./src/match");
+const Player = require("./src/player");
 
 
-const card = new Card({ id: 1, name: 'Arthas' });
-console.log(card);
