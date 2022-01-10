@@ -1,7 +1,7 @@
 const Player = require('./player');
 
 class Mage extends Player {
-    ability(target){
+    classAbility(target) {
         this.target.suffer(1);
     }
 };

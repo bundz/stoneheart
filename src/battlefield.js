@@ -2,22 +2,25 @@ const Graveyard = require('./graveyard');
 const MinionCard = require('./minionCard');
 
 class Battlefield {
-  constructor(capacity){
+  constructor(capacity=7) {
     this.minions = [];
-    this.capacity = 7;
-  }
-  removeCard(index){
-    for (let i = 0; i < this.minions.length; i++){
-      if (this.minions[i].id == index){
-        Graveyard.addCard(minions[i]);
-        this.minions.splice(i,1);
-      }
-    }
-  }
-  addCard(card){
-    this.minions.push[card];
+    this.capacity = capacity;
   }
 
+  removeCard(index) {
+    const minion = this.minions[index];
+
+    if(!minion) {
+      return;
+    }
+
+    Graveyard.addCard(minion);
+    this.minions.splice(index, 1);
+  }
+
+  addCard(card) {
+    this.minions.push[card];
+  }
 };
 
 module.exports = Battlefield;

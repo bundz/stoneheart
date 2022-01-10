@@ -5,44 +5,73 @@ const Graveyard = require("./graveyard");
 const Match = require("./match");
 
 class Player {
-  constructor (id, name, totalMana, currentMana, playerClass){
+  constructor (id, name, deck) {
     this.id = id;
     this.name = name;
     this.life = 30;
-    this.totalMana = totalMana;
-    this.currentMana = currentMana;
-    this.deck = Deck;
-    this.battlefield = Battlefield;
-    this.graveyard = Graveyard;
-    this.playerClass = playerClass;
-    this.match = Match;
-    this.hand = [Card, Card, Card];
-    this.oponent = Player;
+    this.totalMana = 0;
+    this.currentMana = 0;
+    this.deck = deck;
+    this.graveyard = new Graveyard();
+    this.battlefield = new Battlefield(this.graveyard);
+    this.hand = [];
   }
-  passTurn(){
+
+  setOponent(player) {
+    this.oponent = player;
+  }
+
+  setMatch(match) {
+    this.match = match;
+  }
+
+  passTurn() {
+    this.match.nextTurn();
+  }
+
+  castCard(cardIndex) {
 
   }
-  castCard(cardIndex){
+
+  addTotalMana(num) {
+
+    if(this.totalMana === 10) {
+      return;
+    }
+
+    this.totalMana += num;
+  }
+
+  drawCard() {
 
   }
-  drawCard(){
 
+  classAbility() {}
+
+  attack(attackerIndex,targetIndex) {
+    const attacker = this.battlefield.getMinion(attackerIndex);
+    const target = this.oponent.battlefield.getMinion(targetIndex);
+    attacker.hit(target);
+    target.hit(attacker);
   }
-  classAbility(){
 
+  suffer(damage) {
+    //sofre dano
+    if(this.isDead()) {
+      this.match.finish();
+    }
   }
-  attack(){
 
-  }
-  attack(attacker,target){
-
-
-  }
-  suffer(damage){
-
-  }
-  isDead(){
+  isDead() {
     
+  }
+
+  shuffleDeck() {
+    
+  }
+
+  drawInitialCards() {
+    //this.hand.push(deck.pop()) 3x
   }
 };
 
