@@ -2,38 +2,37 @@ const Battlefield = require('./battlefield');
 const Card = require('./card');
 
 class MinionCard extends Card {
-    constructor(attack, life, race){
+    constructor(attack, life, race) {
       this.attack = attack;
       this.life = life;
       this.race = race;
     }
 
-    getAttack(){
+    getAttack() {
       return this.attack;
     }
     
-    getLife(){
+    getLife() {
       return this.life;
     }
 
-    getRace(){
+    getRace() {
       return this.race;
     }
 
-    suffer(damage){
-      this.life -= damage;    
-      if(this.isDead()){
-        Battlefield.removeCard(this.id);
+    suffer(damage) {
+      this.life -= damage;
+      if(this.isDead()) {
+        this.battlefield.removeCard(this);
       }
     }
 
-    hit(minion){
+    hit(minion) {
       minion.suffer(this.attack);
-      this.life -= minion.attack;
     }
     
-    isDead(){
-      return this.life < 0 ? true : false;
+    isDead() {
+      return this.life < 0;
     } 
 };
 

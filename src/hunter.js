@@ -1,11 +1,8 @@
 const Player = require('./player');
 
 class Hunter extends Player {
-  ability() {
+  classAbility() {
     this.oponent.suffer(2);
-    if(this.oponent.isDead()) {
-      finish();
-    }
   }
 };
 

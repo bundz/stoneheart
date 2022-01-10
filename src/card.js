@@ -1,24 +1,24 @@
 class Card{
-    constructor(id, name, cardClass, manaCost){
+    constructor(id, name, cardClass, manaCost) {
         this.id = id;
         this.name = name;
         this.cardClass = cardClass;
         this.manaCost = manaCost;
     };
 
-    getNome(){
+    getNome() {
         return this.name;
     };
 
-    getCardClass(){
+    getCardClass() {
         return this.cardClass;
     };
 
-    getManaCost(){
+    getManaCost() {
         return this.manaCost;
     };
 
-    getId(){
+    getId() {
         return this.id;
     };
 
