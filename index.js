@@ -12,8 +12,6 @@ const cardList = [1,1,2,2];
 const cards = cardLoader.generateCards(cardList);
 const deck = new Deck(cards);
 
-<<<<<<< HEAD
-=======
 const hunter = new Hunter(1, 'Muras', deck);
 const mage = new Mage(1, 'LAELAGP', deck);
 const match = new Match(hunter, mage);
@@ -41,4 +39,3 @@ console.log(match.getCurrentPlayer().name);
 // const cards = CardLoader.generateCards(cardList);
 // const deck = new Deck(cards);
 // const player = new Player(deck);
->>>>>>> 4463dad7c3ac41060c573c6bed9bc431e3bacf8f
