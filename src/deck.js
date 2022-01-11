@@ -24,7 +24,7 @@ class Deck {
   }
 
   pop() {
-    return this.cards[0];
+    return this.cards.pop();
   }
 };
 
