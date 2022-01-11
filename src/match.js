@@ -44,7 +44,11 @@ class Match {
   finish() {
     this.state = 'finished';
 
-    //WHO IS THE WINNER
+    if(this.player1.isDead()) {
+      this.winner = player2;
+      return;
+    }
+    this.winner = player1;
   }
 };
 
