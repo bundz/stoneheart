@@ -32,7 +32,7 @@ class MinionCard extends Card {
     }
     
     isDead() {
-      return this.life < 0;
+      return this.life <= 0;
     } 
 };
 
