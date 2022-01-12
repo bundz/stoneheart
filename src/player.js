@@ -45,7 +45,7 @@ class Player {
   }
 
   drawCard() {
-    this.hand.push(deck.pop());
+    this.hand.push(this.deck.pop());
   }
 
   classAbility() {}
@@ -69,12 +69,12 @@ class Player {
   }
 
   shuffleDeck() {
-    this.deck.shuffle(deck);
+    this.deck.shuffle(this.deck);
   }
 
   drawInitialCards() {
     for (let i = 0; i < 3; i++){
-      this.hand.push(deck.pop());
+      this.hand.push(this.deck.pop());
     }
   }
 };
