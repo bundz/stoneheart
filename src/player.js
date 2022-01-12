@@ -28,6 +28,11 @@ class Player {
   }
 
   castCard(cardIndex) {
+    if(hand[cardIndex].getManaCost() > this.currentMana || this.battlefield.minions.length < this.battlefield.capacity){
+      return;
+    }
+    this.battlefield.addCard(hand[cardIndex]);
+    this.currentMana -= hand[cardIndex].getManaCost();
   }
 
   addTotalMana(num) {
@@ -60,11 +65,11 @@ class Player {
   }
 
   isDead() {
-    return this.life < 0;
+    return this.life <= 0;
   }
 
   shuffleDeck() {
-    Deck.shuffle(deck);
+    this.deck.shuffle(deck);
   }
 
   drawInitialCards() {
