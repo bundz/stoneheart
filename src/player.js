@@ -1,8 +1,6 @@
-const Card = require("./card");
 const Deck = require("./deck");
 const Battlefield = require("./battlefield");
 const Graveyard = require("./graveyard");
-const Match = require("./match");
 
 class Player {
   constructor (id, name, deck) {
@@ -30,7 +28,6 @@ class Player {
   }
 
   castCard(cardIndex) {
-
   }
 
   addTotalMana(num) {
@@ -43,7 +40,7 @@ class Player {
   }
 
   drawCard() {
-
+    this.hand.push(deck.pop());
   }
 
   classAbility() {}
@@ -56,22 +53,24 @@ class Player {
   }
 
   suffer(damage) {
-    //sofre dano
+    this.life -= damage;
     if(this.isDead()) {
       this.match.finish();
     }
   }
 
   isDead() {
-    
+    return this.life < 0;
   }
 
   shuffleDeck() {
-    
+    Deck.shuffle(deck);
   }
 
   drawInitialCards() {
-    //this.hand.push(deck.pop()) 3x
+    for (let i = 0; i < 3; i++){
+      this.hand.push(deck.pop());
+    }
   }
 };
 
