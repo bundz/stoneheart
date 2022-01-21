@@ -17,7 +17,10 @@ describe('Deck', () => {
 
   context('pop', () => {
     it('should return a card', () => {
-
+      const deck = new Deck(cards);
+      let card = deck.pop();
+      expect(card).to.be.instanceOf(Card);
+      expect(deck.getLength()).to.be.equals(6);
     });
   });
 

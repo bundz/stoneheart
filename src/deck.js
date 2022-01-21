@@ -1,6 +1,6 @@
 class Deck {
   constructor(cards) {
-    this.cards = [];
+    this.cards = cards;
   }
 
   isEmpty() {
@@ -24,6 +24,7 @@ class Deck {
   }
 
   pop() {
+    console.log(this.cards);
     return this.cards.pop();
   }
 };
