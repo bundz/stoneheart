@@ -2,7 +2,8 @@ const Battlefield = require('./battlefield');
 const Card = require('./card');
 
 class MinionCard extends Card {
-    constructor(attack, life, race) {
+    constructor({ id, name, class: cardClass, cost: manaCost, attack, life, race }) {
+      super({ id, name, cardClass, manaCost });
       this.attack = attack;
       this.life = life;
       this.race = race;

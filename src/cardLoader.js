@@ -1,4 +1,5 @@
 const Card = require('./card');
+const MinionCard = require('./minionCard');
 
 class CardLoader {
   constructor (cards) {
@@ -16,7 +17,15 @@ class CardLoader {
   }
 
   generateCards(ids) {
-    return ids.map((id) => new Card(this.cards[id]));
+    return ids.map((id) => {
+      const card = this.cards[id];
+
+      if(card['minion/spell'].includes('Minion')) {
+        return new MinionCard(card);
+      }
+
+      return new Card(card);
+    });
   }
 }
 
