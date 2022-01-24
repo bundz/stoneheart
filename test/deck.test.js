@@ -27,6 +27,7 @@ describe('Deck', () => {
   context('constructor', () => {
       it('should have cards', () => {
         const deck = new Deck(cards);
+        expect(deck).to.be.a('array');
       });
   });
 
