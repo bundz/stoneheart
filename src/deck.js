@@ -4,7 +4,7 @@ class Deck {
   }
 
   isEmpty() {
-    if(this.cards.length() === 0) {
+    if(this.cards.length === 0) {
       return true;
     }
     return false;
@@ -14,12 +14,12 @@ class Deck {
     return this.cards.length;
   }
 
-  shuffle(deck) {
-    for(let i = deck.length; i > 20; i--) {
+  shuffle(cards) {
+    for(let i = cards.length; i > 4; i--) {
       let j = Math.floor(Math.random() * (i + 1));
-      let temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      let temp = cards[i];
+      cards[i] = cards[j];
+      cards[j] = temp;
     }
   }
 
