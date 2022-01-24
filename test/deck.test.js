@@ -41,7 +41,7 @@ const Card = require('../src/card');
 
   context('isEmpty', () => {
       it('should return false', () => {
-        expect(deck.isEmpty(cards)).to.be.false;
+        expect(deck.isEmpty()).to.be.false;
       });
   });
 

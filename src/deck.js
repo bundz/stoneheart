@@ -3,8 +3,8 @@ class Deck {
     this.cards = cards;
   }
 
-  isEmpty(cards) {
-    if(cards.length === 0) {
+  isEmpty() {
+    if(this.cards.length === 0) {
       return true;
     }
     return false;
