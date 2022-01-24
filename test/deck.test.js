@@ -12,7 +12,6 @@ describe('Deck', () => {
   beforeEach(() => {
     cardLoader = new CardLoader(cardsData);
     cards = cardLoader.generateCards([ 1, 1, 2, 2, 3, 4, 5 ]);
-    console.log(1);
   })
 
   context('pop', () => {
