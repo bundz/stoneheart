@@ -39,6 +39,8 @@ class Match {
   
   nextTurn() {
     this.currentPlayer = this.currentPlayer.oponent;
+    this.currentPlayer.addTotalMana(1);
+    this.currentPlayer.refreshMana();
   }
 
   finish() {
