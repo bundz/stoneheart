@@ -4,7 +4,7 @@ const cardsData = require('../database/cards.json');
 const Deck = require('../src/deck');
 const Card = require('../src/card');
 
- describe.only('Deck', () => {
+ describe('Deck', () => {
 
   let cardLoader;
   let cards;

@@ -56,7 +56,7 @@ class Player {
   }
 
   suffer(damage) {
-    //sofre dano
+    this.life -= damage;
     if(this.isDead()) {
       this.match.finish();
     }
