@@ -35,10 +35,6 @@ class Player {
 
   addTotalMana(num) {
 
-    if(this.totalMana === 10) {
-      return;
-    }
-
     if(this.totalMana + num > 10) {
       this.totalMana = 10;
       return;

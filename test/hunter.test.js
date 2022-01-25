@@ -1,5 +1,7 @@
+const { expect } = require('chai');
 const Player = require('../src/player');
 const Hunter = require('../src/hunter');
+
 
 describe('Hunter', () => {
   
@@ -9,6 +11,7 @@ describe('Hunter', () => {
       const target = new Player();
       hunter.setOponent(target);
       hunter.classAbility();
+      expect(target.life).to.be.equals(28);
     });
   }); 
 });

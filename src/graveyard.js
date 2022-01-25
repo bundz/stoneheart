@@ -1,10 +1,10 @@
 class Graveyard {
 
-    constructor(){
+    constructor() {
         this.cards = [];
     }
 
-    addCard(card){
+    addCard(card) {
         this.cards.push(card);
     }
 

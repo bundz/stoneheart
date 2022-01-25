@@ -20,6 +20,7 @@ describe('Graveyard', () => {
       let card = cardsDeck[0];
       graveyard.addCard(card);
       expect(graveyard.cards.length).to.not.equal(0);
+      expect(graveyard.cards.length).to.be.equals(1);
       expect(graveyard.cards[0]).to.be.instanceOf(Card);
     })
   });
