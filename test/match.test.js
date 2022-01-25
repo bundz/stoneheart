@@ -5,7 +5,7 @@ const cardsData = require('../database/cards.json');
 const Deck = require('../src/deck');
 const Match = require('../src/match');
 
-describe.only('Match', () => {
+describe('Match', () => {
 
   let cardLoader;
   let cards;

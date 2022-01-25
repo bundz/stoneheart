@@ -39,7 +39,16 @@ class Player {
       return;
     }
 
+    if(this.totalMana + num > 10) {
+      this.totalMana = 10;
+      return;
+    }
+
     this.totalMana += num;
+  }
+
+  refreshMana() {
+    this.currentMana = this.totalMana;
   }
 
   drawCard() {
