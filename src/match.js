@@ -45,10 +45,10 @@ class Match {
     this.state = 'finished';
 
     if(this.player1.isDead()) {
-      this.winner = player2;
+      this.winner = this.player2;
       return;
     }
-    this.winner = player1;
+    this.winner = this.player1;
   }
 };
 
