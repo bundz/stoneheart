@@ -5,8 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
+<<<<<<< HEAD
     "test": "node ./node_modules/mocha/bin/mocha",
     "generate:cards": "node ./scripts/generateCardsFromCsv.js > ./database/cards.json"
+=======
+    "test": "./node_modules/mocha/bin/mocha",
+    "generate:cards": "node ./scripts/generateCardsFromCsv.js > ./database/cards.json",
+    "coverage": "./node_modules/nyc/bin/nyc.js npm test"
+>>>>>>> 74980dfc015e94238c02da8658df7bc518d2e498
   },
   "repository": {
     "type": "git",
@@ -20,6 +26,7 @@
   "homepage": "https://github.com/bundz/stoneheart#readme",
   "devDependencies": {
     "chai": "^4.3.4",
-    "mocha": "^9.1.4"
+    "mocha": "^9.1.4",
+    "nyc": "^15.1.0"
   }
 }
