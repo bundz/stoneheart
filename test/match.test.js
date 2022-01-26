@@ -6,7 +6,7 @@ const Deck = require('../src/deck');
 const Match = require('../src/match');
 const Player = require('../src/player');
 
-describe.only('Match', () => {
+describe('Match', () => {
 
   let cardLoader;
   let cards;
