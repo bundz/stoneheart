@@ -31,6 +31,7 @@ describe('Battlefield', () => {
     it('should remove card in battlefield', () => {
       battlefield.addCard(cards[1]);
       battlefield.removeCard(1);
+      battlefield.removeCard(4);
       expect(battlefield.minions.length).to.not.equal(2);
     })
   })
