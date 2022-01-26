@@ -30,7 +30,12 @@ class Player {
   }
 
   castCard(cardIndex) {
-
+    let carta = this.hand.splice(index, 1);
+    if( carta.getManaCost() > this.currentMana){
+      return;
+    }
+    this.currentMana -= carta.getManaCost()
+    this.battlefield.addCard(carta);
   }
 
   addTotalMana(num) {
@@ -71,7 +76,7 @@ class Player {
     if( this.life <= 0 ){
       return true;
     }
-    
+
     return false;
   }
 
