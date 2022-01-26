@@ -6,7 +6,7 @@ class Card{
         this.manaCost = Number(manaCost);
     };
 
-    getNome() {
+    getName() {
         return this.name;
     };
 
