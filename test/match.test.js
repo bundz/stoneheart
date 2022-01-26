@@ -4,15 +4,15 @@ const CardLoader = require('../src/cardLoader');
 const cardsData = require('../database/cards.json');
 const Deck = require('../src/deck');
 const Match = require('../src/match');
+const Player = require('../src/player');
 
-describe('Match', () => {
+describe.only('Match', () => {
 
   let cardLoader;
   let cards;
   let deck;
   let player1;
   let player2;
-
 
   beforeEach(() => {
     cardLoader = new CardLoader(cardsData);
@@ -35,7 +35,7 @@ describe('Match', () => {
     it('should assign currentPlayer a value', () => {
       const match = new Match(player1, player2);
       match.drawFirstPlayer();
-      expect(match.currentPlayer).to.not.be.null;
+      expect(match.currentPlayer).to.be.instanceOf(Player);
     });
   });
 
@@ -57,6 +57,27 @@ describe('Match', () => {
     });
   });
 
+  context('get current player', () => {
+    it('should return a player', () => {
+      const match = new Match(player1, player2);
+      match.start();
+      const currentPlayer = match.getCurrentPlayer();
+      expect(currentPlayer).to.be.instanceOf(Player);
+    });
+  });
+
+  
+  context('next turn', () => {
+    it('should change current player, add total mana and refresh mana', () => {
+      const match = new Match(player1, player2);
+      match.start();
+      match.drawFirstPlayer(); // BUGADASSO
+      match.nextTurn();
+      expect(match.currentPlayer.totalMana).to.equal(1);
+      expect(match.currentPlayer.currentMana).to.equal(1);
+    });
+  });
+
   context('start', () => {
     it('current player and players hand should be diferent from null, state should be running', () => {
       const match = new Match(player1, player2);
@@ -71,9 +92,14 @@ describe('Match', () => {
   context('finish', () => {
     it('should assign a winner', () => {
       const match = new Match(player1, player2);
+      match.start();
+      match.player1.life = 0;
+      match.finish();
+      match.player2.life = 0;
+      match.player1.life = 30;
       match.finish();
       expect(match.state).to.be.equal('finished');
-      expect(match.winner).to.be.equal(player1);
+      expect(match.winner).to.be.instanceOf(Player);
     });
   });
 });

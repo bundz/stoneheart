@@ -28,7 +28,11 @@ class Match {
 
   start() {
     this.state = 'running';
+    this.player1.oponent = this.player2;
+    this.player2.oponent = this.player1;
     this.drawFirstPlayer();
+    this.currentPlayer.addTotalMana(1);
+    this.currentPlayer.refreshMana();
     this.makePlayersShuffleDecks();
     this.makePlayersDrawInitialCards();
   }
