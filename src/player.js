@@ -68,7 +68,11 @@ class Player {
   }
 
   isDead() {
+    if( this.life <= 0 ){
+      return true;
+    }
     
+    return false;
   }
 
   shuffleDeck() {
