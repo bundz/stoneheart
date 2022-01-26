@@ -4,8 +4,8 @@ const Card = require('./card');
 class MinionCard extends Card {
     constructor({ id, name, race, class: cardClass, cost, attack, health: life }) {
       super({ id, name, class: cardClass, cost });
-      this.attack = attack;
-      this.life = life;
+      this.attack = parseInt(attack);
+      this.life = parseInt(life);
       this.race = race;
     }
 
