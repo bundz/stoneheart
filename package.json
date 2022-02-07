@@ -9,7 +9,7 @@
     "test_win": "node ./node_modules/mocha/bin/mocha",
     "generate:cards": "node ./scripts/generateCardsFromCsv.js > ./database/cards.json",
     "coverage": "./node_modules/nyc/bin/nyc.js npm test",
-    "coverage_win": "node ./node_modules/nyc/bin/nyc.js npm test"
+    "coverage_win": "node ./node_modules/nyc/bin/nyc.js npm run test_win"
   },
   "repository": {
     "type": "git",

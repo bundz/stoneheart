@@ -6,7 +6,7 @@ const Deck = require('../src/deck');
 const Match = require('../src/match');
 const Player = require('../src/player');
 
-describe('Match', () => {
+describe.only('Match', () => {
 
   let cardLoader;
   let cards;
@@ -71,7 +71,6 @@ describe('Match', () => {
     it('should change current player, add total mana and refresh mana', () => {
       const match = new Match(player1, player2);
       match.start();
-      match.drawFirstPlayer(); // BUGADASSO
       match.nextTurn();
       expect(match.currentPlayer.totalMana).to.equal(1);
       expect(match.currentPlayer.currentMana).to.equal(1);
